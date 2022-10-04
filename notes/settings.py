@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+from keys import keys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-y(fpqqs(vy6*!xv59y$=c*s=*n*s$!1x9csqs@e4g0+kwoij&g"
-
+SECRET_KEY = keys.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -86,15 +86,7 @@ WSGI_APPLICATION = "notes.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "notes",
-        "HOST": "localhost",
-        "USER": "root",
-        "PASSWORD": "S@eed1035",
-    }
-}
+DATABASES = keys.DATABASES
 
 
 # Password validation
